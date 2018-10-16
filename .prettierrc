@@ -1,0 +1,32 @@
+{
+  "printWidth": 300,
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "parser": "typescript",
+        "printWidth": 200,
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": true,
+        "trailingComma": "none",
+        "bracketSpacing": true,
+        "arrowParens": "always"
+      }
+    },
+    {
+      "files": "*.js",
+      "options": {
+        "printWidth": 200,
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": true,
+        "trailingComma": "none",
+        "bracketSpacing": true,
+        "arrowParens": "always"
+      }
+    }
+  ]
+}

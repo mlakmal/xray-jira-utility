@@ -1,0 +1,32 @@
+{
+  "name": "xray-jira-utility",
+  "version": "0.0.1",
+  "description": "Wrapper for xray jira plugin",
+  "publisher": "AnthemInc",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p ./"
+  },
+  "author": "Lakmal Molligoda",
+  "license": "MIT",
+  "homepage": "https://github.com/mlakmal/xray-jira-utility#README.md",
+  "bugs": {
+    "url": "https://github.com/mlakmal/xray-jira-utility/issues",
+    "email": "lakmal.molligoda@anthem.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mlakmal/vxray-jira-utility.git"
+  },
+  "dependencies": {
+    "cucumber": "^5.0.2",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.2",
+    "@types/request": "2.47.1",
+    "@types/cucumber": "4.0.4",
+    "@types/node": "^7.0.43"
+  }
+}

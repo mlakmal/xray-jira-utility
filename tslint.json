@@ -1,0 +1,91 @@
+{
+  "linterOptions": {
+    "exclude": ["**/*.spec.ts"]
+  },
+  "rulesDirectory": "./tools/tslint-rules",
+  "rules": {
+    "istanbul-comments": [true],
+    "no-imports": [
+      true,
+      {
+        "libs": "(audit|cache|common|db|filters|http|loaders|logger|middleware|models|rest|security|utils)",
+        "others": "",
+        "apis": "(irx|dbg|tcp|mad)"
+      }
+    ],
+    "comment-format": [false],
+    "indent": [true, "spaces"],
+    "no-duplicate-variable": true,
+    "no-eval": true,
+    "no-trailing-whitespace": true,
+    "import-blacklist": [true, "rxjs", "rxjs/Rx", "rxjs/operators"],
+    "import-spacing": true,
+    "quotemark": [true, "single"],
+    "semicolon": [true, "always"],
+    "triple-equals": [true, "allow-null-check"],
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      },
+      {
+        "call-signature": "onespace",
+        "index-signature": "onespace",
+        "parameter": "onespace",
+        "property-declaration": "onespace",
+        "variable-declaration": "onespace"
+      }
+    ],
+    "curly": true,
+    "no-arg": true,
+    "no-bitwise": true,
+    "no-conditional-assignment": true,
+    "no-console": [true],
+    "no-construct": true,
+    "no-debugger": true,
+    "no-empty": true,
+    "no-empty-interface": true,
+    "no-unsafe-finally": true,
+    "no-unused-expression": true,
+    "eofline": true,
+    "linebreak-style": [true, "CRLF"],
+    "trailing-comma": [true, { "singleline": "never" }],
+    "arrow-parens": true,
+    "class-name": true,
+    "interface-name": [true, "always-prefix"],
+    "new-parens": true,
+    "no-consecutive-blank-lines": [true, 1],
+    "no-var-keyword": true,
+    "no-duplicate-imports": true,
+    "no-unsafe-any": false,
+    "only-arrow-functions": [true, "allow-declarations"],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
+    "ban-types": [
+      true,
+      ["Object", "Use any type or {} for initializing instead."],
+      ["String", "Use string instead."],
+      ["Boolean", "Use boolean instead."],
+      ["Window", "Use IWindow instead."],
+      ["Renderer", "Use Renderer2 instead."],
+      ["ReflectiveInjector", "Use Injector instead."]
+    ],
+    "ban": [
+      true,
+      {"name": "Param", "message": "Use Param2 instead"},
+      {"name": "HeaderParam", "message": "Use HeaderParam2 instead"},
+      {"name": "QueryParam", "message": "Use QueryParam2 instead"},
+      {"name": "Body", "message": "Use Body2 instead"}
+    ],
+    "file-name-casing": [true, "camel-case"],
+    "prefer-for-of": true,
+    "await-promise": true,
+    "ban-comma-operator": true,
+    "cyclomatic-complexity": true,
+    "no-return-await": true,
+    "prefer-object-spread": true
+  }
+}
