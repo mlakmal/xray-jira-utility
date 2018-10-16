@@ -17,7 +17,7 @@ export class RestUtil {
       };
       options.strictSSL = false;
       request(options, (error: any, response: any, body: any) => {
-        if (response.statusCode !== 200 && response.statusCode !== 201) {
+        if (response.statusCode !== 200 && response.statusCode !== 201 && response.statusCode !== 204) {
           reject(new Error(error || response.body));
           return;
         }

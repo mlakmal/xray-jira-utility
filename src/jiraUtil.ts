@@ -25,7 +25,7 @@ export class JiraUtil {
     };
 
     fields[JiraCustomFields.getProp('revision')] = environment;
-    fields[JiraCustomFields.getProp('testEnvironment')] = environment;
+    fields[JiraCustomFields.getProp('testEnvironment')] = [environment];
     fields[JiraCustomFields.getProp('itTeam')] = [
       {
         id: teamId //it team
