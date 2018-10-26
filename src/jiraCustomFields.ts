@@ -11,6 +11,7 @@ export class JiraCustomFields {
   private static revision = 'customfield_14136';
   private static testEnvironment = 'customfield_14725';
   private static itTeam = 'customfield_12479';
+  private static testType = 'customfield_17121';
 
   static setProps(props: any) {
     for (const key in props) {

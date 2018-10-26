@@ -21,18 +21,25 @@ export class FetchJiraTest {
     this.jiraUtil.fetchIssue(key).then(
       (result) => {
         let test = result;
-        this.xrayUtil.fetchUsers(test).then(
-          (result) => {
-            let users = result;
-            (users || []).forEach((user: any) => {
-              this.generateUserTestFeatureFile(user, test);
-            });
-          },
-          (error) => {
-            // tslint:disable-next-line:no-console
-            console.error(error);
-          }
-        );
+        if (test.fields[JiraCustomFields.getProp('testType')].value === 'Automated') {
+          this.xrayUtil.fetchUsers(test).then(
+            (result) => {
+              let users = result;
+              (users || []).forEach((user: any) => {
+                this.generateUserTestFeatureFile(user, test);
+                console.log(`test ${test.key} fetched successfully!!!`);
+              });
+            },
+            (error) => {
+              // tslint:disable-next-line:no-console
+              console.error(`test ${test.key} fetch failed.`);
+              console.error(error);
+            }
+          );
+        }
+        else {
+          console.error(`test ${test.key} is not an Automated test.`);
+        }
       },
       (error) => {
         // tslint:disable-next-line:no-console
