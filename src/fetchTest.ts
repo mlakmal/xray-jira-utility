@@ -21,7 +21,7 @@ export class FetchJiraTest {
     this.jiraUtil.fetchIssue(key).then(
       (result) => {
         let test = result;
-        if (test.fields[JiraCustomFields.getProp('testType')].value === 'Automated') {
+        if (test.fields[JiraCustomFields.getProp('executionType')].value === 'Automated' && test.fields[JiraCustomFields.getProp('testType')].value === 'Cucumber') {
           this.xrayUtil.fetchUsers(test).then(
             (result) => {
               let users = result;
@@ -36,9 +36,8 @@ export class FetchJiraTest {
               console.error(error);
             }
           );
-        }
-        else {
-          console.error(`test ${test.key} is not an Automated test.`);
+        } else {
+          console.error(`test ${test.key} is not an Automated execution and Cucumber type test.`);
         }
       },
       (error) => {
