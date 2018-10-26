@@ -21,7 +21,12 @@ export class FetchJiraTest {
     this.jiraUtil.fetchIssue(key).then(
       (result) => {
         let test = result;
-        if (test.fields[JiraCustomFields.getProp('executionType')].value === 'Automated' && test.fields[JiraCustomFields.getProp('testType')].value === 'Cucumber') {
+        if (
+          test.fields[JiraCustomFields.getProp('executionType')] &&
+          test.fields[JiraCustomFields.getProp('executionType')].value === 'Automated' &&
+          test.fields[JiraCustomFields.getProp('testType')] &&
+          test.fields[JiraCustomFields.getProp('testType')].value === 'Cucumber'
+        ) {
           this.xrayUtil.fetchUsers(test).then(
             (result) => {
               let users = result;
